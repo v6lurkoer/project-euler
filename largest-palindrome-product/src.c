@@ -73,40 +73,25 @@ int isPalindrome(void)
     int size = intLen(nums[count]);
     char buffer[size];
     sprintf(buffer, "%i", nums[count]);
+    printf("%s\n", buffer);
+    break;
 
-    if (size % 2 == 0)                      // if s is divisible by 2 then do three checks
+    if (buffer[0] != buffer[size - 1])
     {
-      if (buffer[0] != buffer[size - 1])
-      {
-        count--;
-        continue;
-      }
-      else if (buffer[1] != buffer[size - 2])
-      {
-        count--;
-        continue;
-      }
-      else if (buffer[2] != buffer[size - 3])
-      {
-        count--;
-        continue;
-      }
-      else return nums[count];
+      count--;
+      continue;
     }
-    else                                    // if s is not divisible by 2 then do two checks
+    else if (buffer[1] != buffer[size - 2])
     {
-      if (buffer[0] != buffer[size - 1])
-      {
-        count--;
-        continue;
-      }
-      else if (buffer[1] != buffer[size - 2])
-      {
-        count--;
-        continue;
-      }
-      else return nums[count];
+      count--;
+      continue;
     }
+    else if (buffer[2] != buffer[size - 3])
+    {
+      count--;
+      continue;
+    }
+    else return nums[count];
   }
 
   return 0;
