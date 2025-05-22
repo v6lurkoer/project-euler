@@ -1,3 +1,5 @@
+/* https://projecteuler.net/problem=5 */
+
 #include <stdio.h>
 
 const int MIN = 1;
